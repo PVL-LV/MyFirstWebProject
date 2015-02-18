@@ -33,9 +33,9 @@
         </dependency>
 
         <dependency>
-            <groupId>postgresql-jdbc</groupId>
-            <artifactId>postgresql-9.4-1200.jdbc41</artifactId>
-            <version>9.4-1200</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4-1200-jdbc41</version>
         </dependency>
 
     </dependencies>
