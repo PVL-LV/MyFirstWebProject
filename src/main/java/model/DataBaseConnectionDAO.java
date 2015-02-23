@@ -11,8 +11,6 @@ public class DataBaseConnectionDAO {
         PreparedStatement pst = null;
         ResultSet rs = null;
 
-        //String jdbcDriver = "org.postgresql.Driver";
-
         try {
             Class.forName("org.postgresql.Driver");
         } catch(ClassNotFoundException e) {

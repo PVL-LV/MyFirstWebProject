@@ -4,10 +4,11 @@
     <title>Sign Up Page</title>
 </head>
 <body>
-<form method="POST">
+<form method="POST"
+      action="Registration.do">
 
     Your name:<br>
-    <input type="text" name="firstname">
+    <input type="text" name="name">
     <br>
     Email:<br>
     <input type="text" name="email">
