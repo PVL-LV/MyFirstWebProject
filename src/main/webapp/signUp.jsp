@@ -8,16 +8,16 @@
       action="Registration.do">
 
     Your name:<br>
-    <input type="text" name="name">
+    <input type="text" name="name" required="required">
     <br>
     Email:<br>
-    <input type="text" name="email">
+    <input type="text" name="email" required="required">
     <br>
     Create a password:<br>
-    <input type="password" name="psw">
+    <input type="password" name="psw" required="required">
     <br>
     Confirm your password:<br>
-    <input type="password" name="psw2">
+    <input type="password" name="psw2" required="required">
     <br><br>
     <input type="submit" value="Sign up">
 
