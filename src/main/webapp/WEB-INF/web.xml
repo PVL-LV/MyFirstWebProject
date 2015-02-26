@@ -7,14 +7,6 @@
 
 
     <servlet>
-        <servlet-name>Ch3 Beer</servlet-name>
-        <servlet-class>servlets.BeerSelect</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ShowLabel</servlet-name>
-        <servlet-class>servlets.ShowLabel</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>servlets.Login</servlet-class>
     </servlet>
@@ -24,14 +16,7 @@
         <servlet-class>servlets.Registration</servlet-class>
     </servlet>
 
-    <servlet-mapping>
-        <servlet-name>Ch3 Beer</servlet-name>
-        <url-pattern>/SelectBeer.do</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ShowLabel</servlet-name>
-        <url-pattern>/ShowIndexPage.do</url-pattern>
-    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login.do</url-pattern>
