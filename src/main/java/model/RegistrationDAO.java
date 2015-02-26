@@ -2,6 +2,7 @@ package model;
 
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class RegistrationDAO {
 
@@ -11,10 +12,12 @@ public class RegistrationDAO {
         String yourEmail = email;
         String yourPsw = psw;
 
+        int[] res = null;
         boolean status = false;
+
         Connection conn = null;
         PreparedStatement pst = null;
-        //ResultSet rs = null;
+
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -25,16 +28,18 @@ public class RegistrationDAO {
         }
 
         try {
+            String sql = "insert into users (email, username, password) values (?, ?, ?)";
             conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mydb", "pvl", "54321");
-
-
-            pst = conn.prepareStatement("INSERT INTO users (email, username, password) VALUE (?, ?, ?)");
+            pst = conn.prepareStatement(sql);
             pst.setString(1, yourEmail);
             pst.setString(2, yourName);
             pst.setString(3, yourPsw);
+            pst.addBatch();
+            res = pst.executeBatch();
+            if (res != null) {
+                status = true;
+            }
 
-            ResultSet rs = pst.executeQuery();
-            status = rs.next();
 
         } catch (SQLException e) {
             System.out.println("Connection faild!");
@@ -56,7 +61,5 @@ public class RegistrationDAO {
             }
         }
         return status;
-
-
     }
 }
