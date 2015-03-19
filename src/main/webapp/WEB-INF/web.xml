@@ -5,6 +5,11 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
 
+    <!--<context-param>-->
+      <!--<param-name>tempfile.dir</param-name>-->
+      <!--<param-value>tmpfiles</param-value>-->
+    <!--</context-param>-->
+
 
     <servlet>
         <servlet-name>Login</servlet-name>
@@ -16,6 +21,16 @@
         <servlet-class>servlets.Registration</servlet-class>
     </servlet>
 
+    <!--<servlet>-->
+        <!--<servlet-name>UploadDownloadServlet</servlet-name>-->
+        <!--<servlet-class>servlets.UploadDownloadServlet</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>UploadTextServlet</servlet-name>-->
+        <!--<servlet-class>servlets.UploadTextServlet</servlet-class>-->
+    <!--</servlet>-->
+
 
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -26,6 +41,17 @@
         <servlet-name>Registration</servlet-name>
         <url-pattern>/Registration.do</url-pattern>
     </servlet-mapping>
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>UploadServlet</servlet-name>-->
+        <!--<url-pattern>/UploadDownloadServlet.do</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>UploadServlet</servlet-name>-->
+        <!--<url-pattern>/UploadServlet.do</url-pattern>-->
+    <!--</servlet-mapping>-->
+
 
 
 

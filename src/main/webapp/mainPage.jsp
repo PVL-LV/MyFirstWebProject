@@ -8,34 +8,53 @@
         text-align: right;
     }
 </style>
-
 <body>
-<form method="POST">
+
     <h3><a href="http://localhost:8080/login.jsp">Log out</a></h3>
 
-    Hello <%= request.getAttribute("username") %>
-    <br><br>
+<% String username = (String) request.getAttribute("username");
+%>
+    Hello <%= username %>
 
+<form method="POST">
+
+<br><br>
     Insert your text: <br>
- <textarea name="message" rows="10" cols="50">
+<textarea name="message" rows="10" cols="50">
 Type your text here.
 </textarea>
     <br>
     <input type="submit" value="Submit">
 </form>
-<br><br>
 
-<form action="UploadDownloadFileServlet" method="post" enctype="multipart/form-data">
+<br/>
+
+<% Object taskDone = null;
+    taskDone = request.getAttribute("taskDone");
+%>
+
+<% if(taskDone == null)  {
+%>
+
+<form action="UploadServlet" method="post" enctype="multipart/form-data">
     Select File to Upload:<input type="file" name="fileName">
     <br>
     <input type="submit" value="Upload">
-
 </form>
+
+<% } else {
+%>
+
+<h2> <%= request.getAttribute("message")%> </h2>
+
+ <% }
+ %>
+
+<br/>
 
 <form action="minValueOfWord" method="post">
     Minimum char in the word: <input type="text" name="minValue"><br>
-  <input type="submit" value="Submit">
+    <input type="submit" value="Submit">
 </form>
-
 </body>
 </html>

@@ -38,6 +38,15 @@
             <version>9.4-1200-jdbc41</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.newparser</groupId>
+            <artifactId>newparser</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>/home/pvl/IdeaProjects/MyFirstWebProject/src/lib/newparser.jar</systemPath>
+        </dependency>
+
+
     </dependencies>
 
     <build>
