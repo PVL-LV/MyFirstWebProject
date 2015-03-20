@@ -5,9 +5,7 @@ import model.DataBaseConnectionDAO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -23,9 +21,16 @@ public class Login extends HttpServlet {
         String pass = request.getParameter("pass");
 
         if (DataBaseConnectionDAO.validate(username, pass)) {
-            request.setAttribute("username", username);
-            RequestDispatcher view = request.getRequestDispatcher("/mainPage.jsp");
-            view.forward(request, response);
+
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
+            Cookie userName = new Cookie("username", username);
+            response.addCookie(userName);
+            response.sendRedirect("/mainPage.jsp");
+
+            //request.setAttribute("username", username);
+           // RequestDispatcher view = request.getRequestDispatcher("/mainPage.jsp");
+           // view.forward(request, response);
         } else {
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
             PrintWriter out= response.getWriter();

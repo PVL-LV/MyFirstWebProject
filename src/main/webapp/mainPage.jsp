@@ -12,9 +12,25 @@
 
     <h3><a href="http://localhost:8080/login.jsp">Log out</a></h3>
 
-<% String username = (String) request.getAttribute("username");
-%>
-    Hello <%= username %>
+
+    <%
+        //allow access only if session exists
+        String user = null;
+        if(session.getAttribute("username") == null){
+            response.sendRedirect("login.html");
+        }else user = (String) session.getAttribute("username");
+        String userName = null;
+        String sessionID = null;
+        Cookie[] cookies = request.getCookies();
+        if(cookies !=null){
+            for(Cookie cookie : cookies){
+                if(cookie.getName().equals("username")) userName = cookie.getValue();
+                if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+            }
+        }
+    %>
+
+    Hello <%= userName %>
 
 <form method="POST">
 
