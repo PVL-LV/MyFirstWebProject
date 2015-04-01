@@ -21,10 +21,10 @@
         <servlet-class>servlets.Registration</servlet-class>
     </servlet>
 
-    <!--<servlet>-->
-        <!--<servlet-name>UploadDownloadServlet</servlet-name>-->
-        <!--<servlet-class>servlets.UploadDownloadServlet</servlet-class>-->
-    <!--</servlet>-->
+    <servlet>
+        <servlet-name>MinCharSetServlet</servlet-name>
+        <servlet-class>servlets.MinCharSetServlet</servlet-class>
+    </servlet>
 
     <!--<servlet>-->
         <!--<servlet-name>UploadTextServlet</servlet-name>-->
@@ -42,10 +42,10 @@
         <url-pattern>/Registration.do</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>UploadServlet</servlet-name>-->
-        <!--<url-pattern>/UploadDownloadServlet.do</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>MinCharSetServlet</servlet-name>
+        <url-pattern>/MinCharSetServlet.do</url-pattern>
+    </servlet-mapping>
 
     <!--<servlet-mapping>-->
         <!--<servlet-name>UploadServlet</servlet-name>-->

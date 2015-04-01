@@ -24,6 +24,7 @@
 
 <h5>Sign in with your WordCounter Account</h5>
 
+    <%--form to input username and pass--%>
 <form method="POST"
       action="Login.do">
     Name or email:<br>
@@ -35,6 +36,8 @@
     <input type="submit" value="Log in">
 </form>
 <br>
+
+    <%--link to page to sign up--%>
 
 <a href="http://localhost:8080/signUp.jsp">Create an account</a>
 
