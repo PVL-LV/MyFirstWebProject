@@ -26,10 +26,10 @@
         <servlet-class>servlets.MinCharSetServlet</servlet-class>
     </servlet>
 
-    <!--<servlet>-->
-        <!--<servlet-name>UploadTextServlet</servlet-name>-->
-        <!--<servlet-class>servlets.UploadTextServlet</servlet-class>-->
-    <!--</servlet>-->
+    <servlet>
+        <servlet-name>StartCountingServlet</servlet-name>
+        <servlet-class>servlets.StartCountingServlet</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -47,10 +47,10 @@
         <url-pattern>/MinCharSetServlet.do</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>UploadServlet</servlet-name>-->
-        <!--<url-pattern>/UploadServlet.do</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>StartCountingServlet</servlet-name>
+        <url-pattern>/StartCountingServlet.do</url-pattern>
+    </servlet-mapping>
 
 
 

@@ -8,7 +8,9 @@ public class DataCollection {
 
 
     public static void sendDataToCounter() {
+
         System.out.println(args [0]);
+        System.out.println(args [1]);
 
         NewParser.executeParser(args);
     }

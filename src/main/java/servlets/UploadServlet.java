@@ -21,8 +21,11 @@ public class UploadServlet extends HttpServlet {
 
         // gets absolute path of the web application
         String applicationPath = request.getServletContext().getRealPath("");
+        System.out.println(applicationPath);
         // constructs path of the directory to save uploaded file
         String uploadFilePath = applicationPath + File.separator + UPLOAD_DIR;
+        System.out.println(uploadFilePath);
+
         // creates the save directory if it does not exists
         File fileSaveDir = new File(uploadFilePath);
         if (!fileSaveDir.exists()) {
@@ -39,7 +42,7 @@ public class UploadServlet extends HttpServlet {
         }
 
         //add input path
-        DataCollection.args[0] = ("inputPath=" + fileSaveDir.getAbsolutePath() + fileName);
+        DataCollection.args[0] = ("inputPath=" + fileSaveDir.getAbsolutePath() +"/" + fileName);
 
         HttpSession session = request.getSession();
 
