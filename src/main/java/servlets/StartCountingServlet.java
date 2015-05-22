@@ -1,6 +1,8 @@
 package servlets;
 
+import model.CheckMinVal;
 import model.DataCollection;
+import servlets.UploadServlet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,11 +15,12 @@ import java.io.IOException;
 
 @WebServlet("/StartCountingServlet")
 public class StartCountingServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("counting servlet start");
 
-        //DataCollection.args[2] = ("outputPath=" );
+        CheckMinVal.minValCheck();
 
         DataCollection.sendDataToCounter();
 

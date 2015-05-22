@@ -44,6 +44,7 @@ public class MinCharSetServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
     private boolean isInteger(String str) {
         try {
             Integer.parseInt(str);

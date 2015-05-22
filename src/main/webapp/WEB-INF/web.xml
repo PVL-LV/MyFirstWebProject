@@ -31,6 +31,11 @@
         <servlet-class>servlets.StartCountingServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>DownloadServlet</servlet-name>
+        <servlet-class>servlets.DownloadServlet</servlet-class>
+    </servlet>
+
 
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -52,6 +57,10 @@
         <url-pattern>/StartCountingServlet.do</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>DownloadServlet</servlet-name>
+        <url-pattern>/servlets/DownloadServlet.do</url-pattern>
+    </servlet-mapping>
 
 
 

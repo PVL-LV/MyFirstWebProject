@@ -17,13 +17,15 @@ public class UploadServlet extends HttpServlet {
 
     private static final String UPLOAD_DIR = "uploads";
 
+    public String uploadFilePath;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // gets absolute path of the web application
         String applicationPath = request.getServletContext().getRealPath("");
         System.out.println(applicationPath);
         // constructs path of the directory to save uploaded file
-        String uploadFilePath = applicationPath + File.separator + UPLOAD_DIR;
+        uploadFilePath = applicationPath + File.separator + UPLOAD_DIR;
         System.out.println(uploadFilePath);
 
         // creates the save directory if it does not exists
@@ -43,6 +45,11 @@ public class UploadServlet extends HttpServlet {
 
         //add input path
         DataCollection.args[0] = ("inputPath=" + fileSaveDir.getAbsolutePath() +"/" + fileName);
+
+        //add output path
+        DataCollection.args[2] = ("outputPath=" + uploadFilePath + "/output.txt");
+        System.out.println("outputPath = " + uploadFilePath);
+
 
         HttpSession session = request.getSession();
 

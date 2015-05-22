@@ -5,7 +5,11 @@
 </head>
 <body>
 
-Here will be link to download file with result of counting.
+Link to
+
+<a href="/DownloadServlet">download</a>
+
+file with result of counting.
 
 </body>
 </html>
