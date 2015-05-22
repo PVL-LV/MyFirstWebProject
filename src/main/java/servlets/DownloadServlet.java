@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,15 +13,22 @@ import java.io.PrintWriter;
 @WebServlet("/DownloadServlet")
 public class DownloadServlet extends HttpServlet {
 
-    private String filePath = new UploadServlet().getUploadFilePath();
+    private String filePath;
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("start download servlet");
+
+        HttpSession session = request.getSession();
+        filePath = (String)session.getAttribute("uploadFilePath");
 
         response.setContentType("text/plain");
         PrintWriter out = response.getWriter();
         String filename = "output.txt";
         String filepath = filePath + "/";
+
+        System.out.println("filepath= " + filepath);
+
         response.setContentType("APPLICATION/OCTET-STREAM");
         response.setHeader("Content-Disposition","attachment; filename=\"" + filename + "\"");
 
