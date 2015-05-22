@@ -11,11 +11,8 @@ import java.io.PrintWriter;
 
 @WebServlet("/DownloadServlet")
 public class DownloadServlet extends HttpServlet {
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//
-//    }
 
+    private String filePath = new UploadServlet().getUploadFilePath();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("start download servlet");
@@ -23,7 +20,7 @@ public class DownloadServlet extends HttpServlet {
         response.setContentType("text/plain");
         PrintWriter out = response.getWriter();
         String filename = "output.txt";
-        String filepath = "/opt/tomcat/webapps/ROOT/uploads/";
+        String filepath = filePath + "/";
         response.setContentType("APPLICATION/OCTET-STREAM");
         response.setHeader("Content-Disposition","attachment; filename=\"" + filename + "\"");
 

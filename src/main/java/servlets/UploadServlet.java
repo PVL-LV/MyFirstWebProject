@@ -73,6 +73,10 @@ public class UploadServlet extends HttpServlet {
         }
         return "";
     }
+    public String getUploadFilePath() {
+        return uploadFilePath;
+    }
+
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
